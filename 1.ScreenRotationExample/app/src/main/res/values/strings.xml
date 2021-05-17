@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">화면 회전 예제</string>
+    <string name="increase">+ 1</string>
+    <string name="decrease">- 1</string>
+</resources>
