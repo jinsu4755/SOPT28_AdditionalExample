@@ -1,5 +1,7 @@
 ## 화면 회전 예제(Activity 회전에도 상태 저장하기)
 
+[CodeLab 실습: Android Kotlin Fundamentals: Complex Lifecycle Situations](https://developer.android.com/codelabs/kotlin-android-training-complex-lifecycle?index=..%2F..android-kotlin-fundamentals#4)
+
 ### Activity의 상태 저장이 필요한 이유
 
 **Activity가 종료될 수 있는 상황들**
@@ -102,4 +104,3 @@ D/[Lifecycle]MainActivity: onResume
 <img src="./README_photo/RestoreInstanceState.png" />
 
 [코드 복사용 링크](https://carbon.now.sh/embed?bg=rgba(171%2C+184%2C+195%2C+1)&t=one-dark&wt=none&l=auto&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%&si=false&es=2x&wm=false&code=%0A%20%20%20%20%2F%2FonCreate%20%EC%97%90%EC%84%9C%20null%20check%20%EB%A5%BC%20%ED%95%98%EC%A7%80%20%EC%95%8A%EA%B3%A0%20%EC%8B%B6%EB%8B%A4%EB%A9%B4%20%EC%95%84%EB%9E%98%20%EB%B0%A9%EB%B2%95%EC%9C%BC%EB%A1%9C%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95%EB%8F%84%20%EC%9E%88%EB%8B%A4.%0A%0A%20%20%20%20override%20fun%20onRestoreInstanceState(savedInstanceState%3A%20Bundle)%20%7B%0A%20%20%20%20%20%20%20%20super.onRestoreInstanceState(savedInstanceState)%0A%20%20%20%20%20%20%20%20binding.scoreText.text%20%3D%20savedInstanceState.getInt(%22score%22).toString()%0A%20%20%20%20%7D%0A)
-
