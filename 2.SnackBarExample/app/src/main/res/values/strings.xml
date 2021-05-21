@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SnackBarExample</string>
+    <string name="only_message_snack_bar_text">메세지만 있는 스넥바</string>
+</resources>
