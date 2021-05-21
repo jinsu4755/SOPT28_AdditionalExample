@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SwipeRefreshLayout</string>
+    <string name="increase">+ 1</string>
+    <string name="decrease">- 1</string>
+</resources>
