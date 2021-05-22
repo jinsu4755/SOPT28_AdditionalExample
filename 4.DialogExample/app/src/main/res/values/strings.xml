@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DialogExample</string>
+    <string name="show_message_dialog_text">메시지 다이얼로그 버튼</string>
+    <string name="show_list_dialog_button">리스트 다이얼로그 버튼</string>
+</resources>
