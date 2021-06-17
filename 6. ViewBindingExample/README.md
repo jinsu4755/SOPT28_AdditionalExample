@@ -72,6 +72,37 @@ abstract class BindingFragment<V : ViewBinding>(
 - requireNotNull
     - Not null assertion(!!)은 무조건 NullPointerException을 방출합니다. 이는 제가 커스텀을 할 수 없는 예외이기에
     - 개발자가 임의로 커스텀할 수 있는 Exception을 만들기 위해서, 그리고 문법상 조금 더 깔끔한 코드를 작성하기 위해 requireNotNull을 사용했습니다.
+- View Binding 쓴다면서 왜 DataBindingUtil인가요?
+
+```java
+
+// ViewBinding File
+/** A type which binds the views in a layout XML to fields. */
+public interface ViewBinding {
+    /**
+     * Returns the outermost {@link View} in the associated layout file. If this binding is for a
+     * {@code <merge>} layout, this will return the first view inside of the merge tag.
+     */
+    @NonNull
+    View getRoot();
+}
+
+
+// Definition of ViewDataBinding
+public abstract class ViewDataBinding extends BaseObservable implements ViewBinding
+
+/**
+ * Utility class to create {@link ViewDataBinding} from layouts.
+ */
+public class DataBindingUtil
+```
+
+    - DataBindingUtil은 View를 inflate해서 ViewDataBinding 클래스의 형태로 넘겨주는 유틸 클래스입니다.
+    - 그런데 ViewBinding은 ViewDataBinidng의 부모 클래스이네요?
+    - 결국 DataBindingUtil을 활용해서 저는 ViewBinding 클래스를 활용하기 위해서 DataBindingUtil을 사용한 것입니다.
+    - 아 그리고 DataBinding과 ViewBinding의 주요 차이점은 저런 클래스에서 비롯된 것이 아니라 View XML의 루트 태그가 <layout>인지 아닌지에 따라 결정이 됩니다.
+        - 루트 태그가 layout이면 데이터바인딩이 되고 아니면 뷰바인딩 형태로 바인딩 객체를 넘겨받습니다.
+        - 만약에 gradle에서 dataBinding = true를 설정 안하면 View Binding밖에 설정이 안됩니다!
 
 이를 상속시킵니다.
 
